@@ -1,0 +1,394 @@
+{
+  "singers": {
+    "A. R. Rahman": {
+      "instagram": "https://www.instagram.com/arrahman",
+      "twitter": "https://twitter.com/arrahman",
+      "facebook": "https://www.facebook.com/arrahman"
+    },
+    "A.P. Dhillon": {
+      "instagram": "https://www.instagram.com/apdhillon",
+      "twitter": "https://twitter.com/apdhillxn",
+      "facebook": "https://www.facebook.com/officialapdhillon"
+    },
+    "Aastha Gill": {
+      "instagram": "https://www.instagram.com/aasthagill",
+      "twitter": "https://twitter.com/aasthagill",
+      "facebook": "https://www.facebook.com/AasthaGillOfficial"
+    },
+    "Abhay Jodhpurkar": {
+      "instagram": "https://www.instagram.com/abhayjodhpurkar",
+      "twitter": "https://twitter.com/AbhayJodhpurkar",
+      "facebook": "https://www.facebook.com/abhayjodhpurkar"
+    },
+    "Abhijeet Bhattacharya": {
+      "instagram": "https://www.instagram.com/abhijeetbhattacharya",
+      "twitter": "https://twitter.com/abhijeetbhatt",
+      "facebook": "https://www.facebook.com/AbhijeetBhattacharya"
+    },
+    "Abhijeet Sawant": {
+      "instagram": "https://www.instagram.com/abhijeetsawant73",
+      "twitter": "https://twitter.com/abhijeetsawant5",
+      "facebook": "https://www.facebook.com/abhijeetsawant"
+    },
+    "Aditi Singh Sharma": {
+      "instagram": "https://www.instagram.com/aditisinghsharma",
+      "twitter": "https://twitter.com/aditi_official",
+      "facebook": "https://www.facebook.com/AditiSinghSharmaOfficial"
+    },
+    "Aditya Narayan": {
+      "instagram": "https://www.instagram.com/adityanarayanofficial",
+      "twitter": "https://twitter.com/adityan28",
+      "facebook": "https://www.facebook.com/AdityaNarayanOfficial"
+    },
+    "Adnan Sami": {
+      "instagram": "https://www.instagram.com/adnansamiworld",
+      "twitter": "https://twitter.com/adnansamiworld",
+      "facebook": "https://www.facebook.com/adnansamiworld"
+    },
+    "Ajay–Atul": {
+      "instagram": "https://www.instagram.com/ajayatulofficial",
+      "twitter": "https://twitter.com/AjayAtulOnline",
+      "facebook": "https://www.facebook.com/AjayAtulOnline"
+    },
+    "Akhil Sachdeva": {
+      "instagram": "https://www.instagram.com/akhilsachdeva",
+      "twitter": "https://twitter.com/akhilsachdeva",
+      "facebook": "https://www.facebook.com/akhilsachdeva"
+    },
+    "Ali Zafar": {
+      "instagram": "https://www.instagram.com/alifzafar",
+      "twitter": "https://twitter.com/alifzafar",
+      "facebook": "https://www.facebook.com/alifzafar"
+    },
+    "Alisha Chinai": {
+      "instagram": "https://www.instagram.com/alishachinai",
+      "twitter": "https://twitter.com/alishachinai",
+      "facebook": "https://www.facebook.com/AlishaChinaiOfficial"
+    },
+    "Alka Yagnik": {
+      "instagram": "https://www.instagram.com/therealalkayagnik",
+      "twitter": "https://twitter.com/alkayagnik",
+      "facebook": "https://www.facebook.com/AlkaYagnik"
+    },
+    "Amaal Malik": {
+      "instagram": "https://www.instagram.com/amaal_mallik",
+      "twitter": "https://twitter.com/AmaalMallik",
+      "facebook": "https://www.facebook.com/MusicalMallik"
+    },
+    "Amit Kumar": {
+      "instagram": "https://www.instagram.com/amitkumarofficial",
+      "twitter": "https://twitter.com/amitkumar",
+      "facebook": "https://www.facebook.com/AmitkumarOfficial"
+    },
+    "Amit Mishra": {
+      "instagram": "https://www.instagram.com/officialankittiwari",
+      "twitter": "https://twitter.com/amitmishra",
+      "facebook": "https://www.facebook.com/AmitMishraSinger"
+    },
+    "Amit Trivedi": {
+      "instagram": "https://www.instagram.com/amittrivedi",
+      "twitter": "https://twitter.com/amittrivedi",
+      "facebook": "https://www.facebook.com/AmitTrivediMusic"
+    },
+    "Amitabh Bhattacharya": {
+      "instagram": "https://www.instagram.com/amitabhbhattacharyaofficial",
+      "twitter": "https://twitter.com/amitabhbh",
+      "facebook": "https://www.facebook.com/AmitabhBhattacharyaOfficial"
+    },
+    "Ankit Tiwari": {
+      "instagram": "https://www.instagram.com/officialankittiwari",
+      "twitter": "https://twitter.com/officialankitt",
+      "facebook": "https://www.facebook.com/AnkitTiwariOfficial"
+    },
+    "Anu Malik": {
+      "instagram": "https://www.instagram.com/anumalikmusic",
+      "twitter": "https://twitter.com/The_AnuMalik",
+      "facebook": "https://www.facebook.com/AnuMalikOfficial"
+    },
+    "Anuradha Paudwal": {
+      "instagram": "https://www.instagram.com/anuradha_paudwal",
+      "twitter": "https://twitter.com/anupauzac",
+      "facebook": "https://www.facebook.com/AnuradhaPaudwalOfficial"
+    },
+    "Anushka Manchanda": {
+      "instagram": "https://www.instagram.com/iamanushka",
+      "twitter": "https://twitter.com/iAnushkaManchanda",
+      "facebook": "https://www.facebook.com/anushkamanchanda"
+    },
+    "Arijit Singh": {
+      "instagram": "https://www.instagram.com/arijitsingh",
+      "twitter": "https://twitter.com/arijitsingh",
+      "facebook": "https://www.facebook.com/ArijitSingh"
+    },
+    "Arjun Kanungo": {
+      "instagram": "https://www.instagram.com/arjunkanungo",
+      "twitter": "https://twitter.com/arjun_kanungo",
+      "facebook": "https://www.facebook.com/arjunkanungo"
+    },
+    "Armaan Malik": {
+      "instagram": "https://www.instagram.com/armaanmalik",
+      "twitter": "https://twitter.com/ArmaanMalik22",
+      "facebook": "https://www.facebook.com/ArmaanMalikOfficial"
+    },
+    "Asees Kaur": {
+      "instagram": "https://www.instagram.com/aseeskaurmusic",
+      "twitter": "https://twitter.com/AseesKaurMusic",
+      "facebook": "https://www.facebook.com/AseesKaurOfficial"
+    },
+    "Ash King": {
+      "instagram": "https://www.instagram.com/ashkinglive",
+      "twitter": "https://twitter.com/iamashking",
+      "facebook": "https://www.facebook.com/ashkinglive"
+    },
+    "Asha Bhosle": {
+      "instagram": "https://www.instagram.com/asha.bhosle",
+      "twitter": "https://twitter.com/ashabhosle",
+      "facebook": "https://www.facebook.com/ashabhosleofficialpage"
+    },
+    "Atif Aslam": {
+      "instagram": "https://www.instagram.com/atifaslam",
+      "twitter": "https://twitter.com/itsaadee",
+      "facebook": "https://www.facebook.com/AtifAslamOfficialFanPage"
+    },
+    "Ayushmann Khurrana": {
+      "instagram": "https://www.instagram.com/ayushmannk",
+      "twitter": "https://twitter.com/ayushmannk",
+      "facebook": "https://www.facebook.com/ayushmannkhurrana"
+    },
+    "Benny Dayal": {
+      "instagram": "https://www.instagram.com/bennydayalofficial",
+      "twitter": "https://twitter.com/Benny_Dayal",
+      "facebook": "https://www.facebook.com/bennydayal"
+    },
+    "Darshan Raval": {
+      "instagram": "https://www.instagram.com/darshanravaldz",
+      "twitter": "https://twitter.com/DarshanRavalDZ",
+      "facebook": "https://www.facebook.com/DarshanRavalDZ"
+    },
+    "Dev Negi": {
+      "instagram": "https://www.instagram.com/devnegilive",
+      "twitter": "https://twitter.com/itsdev_negi",
+      "facebook": "https://www.facebook.com/DevNegiLive"
+    },
+    "Dhvani Bhanushali": {
+      "instagram": "https://www.instagram.com/dhvanibhanushali22",
+      "twitter": "https://twitter.com/dhvanit",
+      "facebook": "https://www.facebook.com/TheDhvaniBhanushali"
+    },
+    "Diljit Dosanjh": {
+      "instagram": "https://www.instagram.com/diljitdosanjh",
+      "twitter": "https://twitter.com/diljitdosanjh",
+      "facebook": "https://www.facebook.com/diljitdosanjh"
+    },
+    "Divya Kumar": {
+      "instagram": "https://www.instagram.com/divyakumar",
+      "twitter": "https://twitter.com/divyakumar",
+      "facebook": "https://www.facebook.com/DivyaKumarOfficial"
+    },
+    "Divyakumar": {
+      "instagram": "https://www.instagram.com/divyakumar",
+      "twitter": "https://twitter.com/divyakumar",
+      "facebook": "https://www.facebook.com/DivyaKumarOfficial"
+    },
+    "Falguni Pathak": {
+      "instagram": "https://www.instagram.com/falgunipathak",
+      "twitter": "https://twitter.com/falgunipathak",
+      "facebook": "https://www.facebook.com/FalguniPathakOfficial"
+    },
+    "Gajendra Verma": {
+      "instagram": "https://www.instagram.com/gajendraverma",
+      "twitter": "https://twitter.com/gajendraverma",
+      "facebook": "https://www.facebook.com/GajendraVermaOfficial"
+    },
+    "Gurdeep Mehndi": {
+      "instagram": "https://www.instagram.com/gurdeepmehndi",
+      "twitter": "https://twitter.com/gurdeepmehndi",
+      "facebook": "https://www.facebook.com/GurdeepMehndi"
+    },
+    "Guru Randhawa": {
+      "instagram": "https://www.instagram.com/gururandhawa",
+      "twitter": "https://twitter.com/GuruOfficial",
+      "facebook": "https://www.facebook.com/GuruRandhawa"
+    },
+    "Harshdeep Kaur": {
+      "instagram": "https://www.instagram.com/harshdeepkaurmusic",
+      "twitter": "https://twitter.com/HarshdeepKaur",
+      "facebook": "https://www.facebook.com/HarshdeepKaurSinger"
+    },
+    "Himesh Reshammiya": {
+      "instagram": "https://www.instagram.com/realhimesh",
+      "twitter": "https://twitter.com/himeshreshammiya",
+      "facebook": "https://www.facebook.com/HimeshReshammiyaOnline"
+    },
+    "Honey Singh": {
+      "instagram": "https://www.instagram.com/yoyohoneysingh",
+      "twitter": "https://twitter.com/yoyohoneysingh",
+      "facebook": "https://www.facebook.com/YOYOhoneysingh"
+    },
+    "Richa Sharma": {
+      "instagram": "https://www.instagram.com/richasharmamusic",
+      "twitter": "https://twitter.com/richasharma",
+      "facebook": "https://www.facebook.com/RichaSharmaOfficial"
+    },
+    "Javed Ali": {
+      "instagram": "https://www.instagram.com/javedalisinger",
+      "twitter": "https://twitter.com/javedalisinger",
+      "facebook": "https://www.facebook.com/JavedAliOfficial"
+    },
+    "Jonita Gandhi": {
+      "instagram": "https://www.instagram.com/jonitamusic",
+      "twitter": "https://twitter.com/jonitamusic",
+      "facebook": "https://www.facebook.com/JonitaGandhi"
+    },
+    "Jubin Nautiyal": {
+      "instagram": "https://www.instagram.com/jubin_nautiyal",
+      "twitter": "https://twitter.com/JubinNautiyal",
+      "facebook": "https://www.facebook.com/JubinNautiyalOfficial"
+    },
+    "Jyotica Tangri": {
+      "instagram": "https://www.instagram.com/jyoticatangri",
+      "twitter": "https://twitter.com/jyoticatangri",
+      "facebook": "https://www.facebook.com/JyoticaTangriOfficial"
+    },
+    "Kanika Kapoor": {
+      "instagram": "https://www.instagram.com/kanik4kapoor",
+      "twitter": "https://twitter.com/TheKanikaKapoor",
+      "facebook": "https://www.facebook.com/TheKanikaKapoor"
+    },
+    "Karan Aujla": {
+      "instagram": "https://www.instagram.com/karanaujla",
+      "twitter": "https://twitter.com/karanaujla",
+      "facebook": "https://www.facebook.com/KaranAujlaOfficial"
+    },
+    "Kavita Krishnamurti": {
+      "instagram": "https://www.instagram.com/kavitakrishnamurti",
+      "twitter": "https://twitter.com/kavitakrishna",
+      "facebook": "https://www.facebook.com/KavitaKrishnamurtiOfficial"
+    },
+    "Kavita Seth": {
+      "instagram": "https://www.instagram.com/kavitaseth",
+      "twitter": "https://twitter.com/kavitaseth",
+      "facebook": "https://www.facebook.com/KavitaSethOfficial"
+    },
+    "Kumar Sanu": {
+      "instagram": "https://www.instagram.com/kumarsanuofficial",
+      "twitter": "https://twitter.com/KumarsanuTc",
+      "facebook": "https://www.facebook.com/legend.sanuda"
+    },
+    "Kunal Ganjawala": {
+      "instagram": "https://www.instagram.com/kunalganjawalla",
+      "twitter": "https://twitter.com/kunalganjawala",
+      "facebook": "https://www.facebook.com/KunalSingerGanjawala"
+    },
+    "Laqshya Kapoor": {
+      "instagram": "https://www.instagram.com/laqshyakapoor",
+      "twitter": "https://twitter.com/laqshyakapoor",
+      "facebook": "https://www.facebook.com/LaqshyaKapoor"
+    },
+    "Lisa Mishra": {
+      "instagram": "https://www.instagram.com/lisammishra",
+      "twitter": "https://twitter.com/lisammishra",
+      "facebook": "https://www.facebook.com/LisaMishraOfficial"
+    },
+    "Lucky Ali": {
+      "instagram": "https://www.instagram.com/officialluckyali",
+      "twitter": "https://twitter.com/luckyali",
+      "facebook": "https://www.facebook.com/officialluckyali"
+    },
+    "Mahalakshmi Iyer": {
+      "instagram": "https://www.instagram.com/mahalakshmiiyer",
+      "twitter": "https://twitter.com/mahalakshmiiyer",
+      "facebook": "https://www.facebook.com/MahalakshmiIyerOfficial"
+    },
+    "Master Saleem": {
+      "instagram": "https://www.instagram.com/mastersaleem",
+      "twitter": "https://twitter.com/mastersaleem",
+      "facebook": "https://www.facebook.com/MasterSaleemOfficial"
+    },
+    "Mohammed Irfan": {
+      "instagram": "https://www.instagram.com/mohammedirfan",
+      "twitter": "https://twitter.com/mohammedirfan",
+      "facebook": "https://www.facebook.com/MohammedIrfanOfficial"
+    },
+    "Nakash Aziz": {
+      "instagram": "https://www.instagram.com/nakashaziz",
+      "twitter": "https://twitter.com/nakashaziz",
+      "facebook": "https://www.facebook.com/NakashAzizOfficial"
+    },
+    "Neeti Mohan": {
+      "instagram": "https://www.instagram.com/neetimohan18",
+      "twitter": "https://twitter.com/neetimohan18",
+      "facebook": "https://www.facebook.com/NeetiMohanOfficial"
+    },
+    "Neha Kakkar": {
+      "instagram": "https://www.instagram.com/nehakakkar",
+      "twitter": "https://twitter.com/nehakakkar",
+      "facebook": "https://www.facebook.com/nehakakkar"
+    },
+    "Nikitha Gandhi": {
+      "instagram": "https://www.instagram.com/ikavithaseth",
+      "twitter": "https://twitter.com/nikithagandhi",
+      "facebook": "https://www.facebook.com/NikithaGandhiOfficial"
+    },
+    "Palak Mucchal": {
+      "instagram": "https://www.instagram.com/palakmuchhal",
+      "twitter": "https://twitter.com/palakmuchhal",
+      "facebook": "https://www.facebook.com/PalakMuchhalOfficial"
+    },
+    "Pawandeep Rajan": {
+      "instagram": "https://www.instagram.com/pawandeeprajan",
+      "twitter": "https://twitter.com/pawandeeprajan",
+      "facebook": "https://www.facebook.com/PawandeepRajanOfficial"
+    },
+    "Sachet & Parampara Tandon": {
+      "instagram": "https://www.instagram.com/sachetparampara",
+      "twitter": "https://twitter.com/sachetparampara",
+      "facebook": "https://www.facebook.com/SachetParamparaOfficial"
+    },
+    "Sachin–Jigar": {
+      "instagram": "https://www.instagram.com/sachinjigar",
+      "twitter": "https://twitter.com/sachinjigar",
+      "facebook": "https://www.facebook.com/SachinJigarOfficial"
+    },
+    "Shaan": {
+      "instagram": "https://www.instagram.com/singer_shaan",
+      "twitter": "https://twitter.com/singer_shaan",
+      "facebook": "https://www.facebook.com/singer.shaan"
+    },
+    "Shankar Mahadevan": {
+      "instagram": "https://www.instagram.com/shankar.mahadevan",
+      "twitter": "https://twitter.com/Shankar_Live",
+      "facebook": "https://www.facebook.com/shankarlive"
+    },
+    "Shashwat Singh": {
+      "instagram": "https://www.instagram.com/shashwatsingh",
+      "twitter": "https://twitter.com/shashwatsingh",
+      "facebook": "https://www.facebook.com/ShashwatSinghOfficial"
+    },
+    "Shreya Ghoshal": {
+      "instagram": "https://www.instagram.com/shreyaghoshal",
+      "twitter": "https://twitter.com/shreyaghoshal",
+      "facebook": "https://www.facebook.com/ShreyaGhoshalOfficial"
+    },
+    "Sonu Nigam": {
+      "instagram": "https://www.instagram.com/sonunigamofficial",
+      "twitter": "https://twitter.com/sonunigam",
+      "facebook": "https://www.facebook.com/SonuNigamOfficial"
+    },
+    "Tanishk Bagchi": {
+      "instagram": "https://www.instagram.com/tanishkbagchi",
+      "twitter": "https://twitter.com/tanishkbagchi",
+      "facebook": "https://www.facebook.com/TanishkBagchiOfficial"
+    },
+    "Udit Narayan": {
+      "instagram": "https://www.instagram.com/uditnarayanofficial",
+      "twitter": "https://twitter.com/uditnarayan",
+      "facebook": "https://www.facebook.com/UditNarayanOfficial"
+    },
+    "Vidya Vox": {
+      "instagram": "https://www.instagram.com/vidyavox",
+      "twitter": "https://twitter.com/vidyavox",
+      "facebook": "https://www.facebook.com/VidyaVoxOfficial"
+    }
+  }
+}
