@@ -10,7 +10,6 @@ import {
   Users,
   Star,
   TrendingUp,
-  DollarSign,
 } from "lucide-react";
 import { type Celebrity } from "@shared/schema";
 import { Button } from "@/components/ui/button";
@@ -52,12 +51,15 @@ export default function Dashboard() {
   const { toast } = useToast();
   const [searchQuery, setSearchQuery] = useState("");
   const [categoryFilter, setCategoryFilter] = useState<string>("all");
-  const [priceFilter, setPriceFilter] = useState<string>("all");
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
   const [celebrityToDelete, setCelebrityToDelete] = useState<Celebrity | null>(null);
 
   const { data: celebrities = [], isLoading } = useQuery<Celebrity[]>({
     queryKey: ["/api/celebrities"],
+  });
+
+  const { data: categories = [] } = useQuery<string[]>({
+    queryKey: ["/api/categories"],
   });
 
   const deleteMutation = useMutation({
@@ -89,16 +91,13 @@ export default function Dashboard() {
       celebrity.location.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory =
       categoryFilter === "all" || celebrity.category === categoryFilter;
-    const matchesPrice =
-      priceFilter === "all" || celebrity.priceRange === priceFilter;
-    return matchesSearch && matchesCategory && matchesPrice;
+    return matchesSearch && matchesCategory;
   });
 
   const stats = {
     total: celebrities.length,
     featured: celebrities.filter((c) => c.isFeatured).length,
     categories: new Set(celebrities.map((c) => c.category)).size,
-    avgPrice: celebrities.length > 0 ? Math.round(celebrities.filter(c => c.priceRange === "Premium").length / celebrities.length * 100) : 0,
   };
 
   const handleDeleteClick = (celebrity: Celebrity) => {
@@ -115,7 +114,6 @@ export default function Dashboard() {
   const clearFilters = () => {
     setSearchQuery("");
     setCategoryFilter("all");
-    setPriceFilter("all");
   };
 
   return (
@@ -135,7 +133,7 @@ export default function Dashboard() {
         </Link>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between gap-2 space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Celebrities</CardTitle>
@@ -163,16 +161,6 @@ export default function Dashboard() {
           </CardHeader>
           <CardContent>
             <div className="text-3xl font-bold" data-testid="text-categories-count">{stats.categories}</div>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between gap-2 space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Premium Tier</CardTitle>
-            <DollarSign className="w-4 h-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-3xl font-bold" data-testid="text-premium-percentage">{stats.avgPrice}%</div>
           </CardContent>
         </Card>
       </div>
@@ -206,29 +194,15 @@ export default function Dashboard() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">All Categories</SelectItem>
-                <SelectItem value="Singers">Singers</SelectItem>
-                <SelectItem value="Actors">Actors</SelectItem>
-                <SelectItem value="Comedians">Comedians</SelectItem>
-                <SelectItem value="Influencers">Influencers</SelectItem>
-                <SelectItem value="Choreographers">Choreographers</SelectItem>
-                <SelectItem value="Chefs">Chefs</SelectItem>
-                <SelectItem value="Motivational Speakers">Motivational Speakers</SelectItem>
+                {categories.map((category) => (
+                  <SelectItem key={category} value={category}>
+                    {category}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
 
-            <Select value={priceFilter} onValueChange={setPriceFilter}>
-              <SelectTrigger className="w-[180px]" data-testid="select-price-filter">
-                <SelectValue placeholder="All Prices" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All Prices</SelectItem>
-                <SelectItem value="Budget">Budget</SelectItem>
-                <SelectItem value="Mid-Range">Mid-Range</SelectItem>
-                <SelectItem value="Premium">Premium</SelectItem>
-              </SelectContent>
-            </Select>
-
-            {(categoryFilter !== "all" || priceFilter !== "all" || searchQuery) && (
+            {(categoryFilter !== "all" || searchQuery) && (
               <Button
                 variant="outline"
                 size="sm"

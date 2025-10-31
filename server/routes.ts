@@ -186,6 +186,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  app.get("/api/categories", requireAuth, async (_req: Request, res: Response) => {
+    try {
+      const categories = await CelebrityModel.distinct("category");
+      res.json(categories.sort());
+    } catch (error) {
+      console.error("Error fetching categories:", error);
+      res.status(500).json({
+        message: error instanceof Error ? error.message : "Failed to fetch categories",
+      });
+    }
+  });
+
   app.get("/api/celebrities", requireAuth, async (_req: Request, res: Response) => {
     try {
       const celebrities = await CelebrityModel.find().sort({ createdAt: -1 });

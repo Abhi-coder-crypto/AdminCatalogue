@@ -1,14 +1,12 @@
 import { useForm, useFieldArray } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { useLocation } from "wouter";
 import { Plus, X, Image as ImageIcon, Loader2 } from "lucide-react";
 import {
   insertCelebritySchema,
   type InsertCelebrity,
-  categoryOptions,
   genderOptions,
-  priceRangeOptions,
   eventTypeOptions,
   languageOptions,
   socialPlatformOptions,
@@ -44,33 +42,26 @@ export default function AddCelebrity() {
   const { toast } = useToast();
   const [, setLocation] = useLocation();
 
+  const { data: categories = [] } = useQuery<string[]>({
+    queryKey: ["/api/categories"],
+  });
+
   const form = useForm<InsertCelebrity>({
     resolver: zodResolver(insertCelebritySchema),
     defaultValues: {
       name: "",
       slug: "",
-      category: undefined,
+      category: "",
       profileImage: "",
       bio: "",
-      achievements: [""],
       socialLinks: [],
       videoUrl: "",
       gender: undefined,
       languages: [],
       location: "",
-      priceRange: undefined,
       eventTypes: [],
       isFeatured: false,
     },
-  });
-
-  const {
-    fields: achievementFields,
-    append: appendAchievement,
-    remove: removeAchievement,
-  } = useFieldArray({
-    control: form.control,
-    name: "achievements",
   });
 
   const {
@@ -194,7 +185,7 @@ export default function AddCelebrity() {
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          {categoryOptions.map((category) => (
+                          {categories.map((category) => (
                             <SelectItem key={category} value={category}>
                               {category}
                             </SelectItem>
@@ -329,50 +320,23 @@ export default function AddCelebrity() {
                 )}
               />
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <FormField
-                  control={form.control}
-                  name="location"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Location</FormLabel>
-                      <FormControl>
-                        <Input
-                          {...field}
-                          placeholder="e.g., Mumbai"
-                          data-testid="input-location"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="priceRange"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Price Range</FormLabel>
-                      <Select onValueChange={field.onChange} value={field.value}>
-                        <FormControl>
-                          <SelectTrigger data-testid="select-price-range">
-                            <SelectValue placeholder="Select price range" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          {priceRangeOptions.map((range) => (
-                            <SelectItem key={range} value={range}>
-                              {range}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
+              <FormField
+                control={form.control}
+                name="location"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Location</FormLabel>
+                    <FormControl>
+                      <Input
+                        {...field}
+                        placeholder="e.g., Mumbai"
+                        data-testid="input-location"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
               <FormField
                 control={form.control}
@@ -459,55 +423,6 @@ export default function AddCelebrity() {
                   </FormItem>
                 )}
               />
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Achievements</CardTitle>
-              <CardDescription>Notable awards and accomplishments</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {achievementFields.map((field, index) => (
-                <div key={field.id} className="flex gap-2">
-                  <FormField
-                    control={form.control}
-                    name={`achievements.${index}`}
-                    render={({ field }) => (
-                      <FormItem className="flex-1">
-                        <FormControl>
-                          <Input
-                            {...field}
-                            placeholder="e.g., National Film Award Winner"
-                            data-testid={`input-achievement-${index}`}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  {achievementFields.length > 1 && (
-                    <Button
-                      type="button"
-                      variant="outline"
-                      size="icon"
-                      onClick={() => removeAchievement(index)}
-                      data-testid={`button-remove-achievement-${index}`}
-                    >
-                      <X className="w-4 h-4" />
-                    </Button>
-                  )}
-                </div>
-              ))}
-              <Button
-                type="button"
-                variant="outline"
-                onClick={() => appendAchievement("")}
-                data-testid="button-add-achievement"
-              >
-                <Plus className="mr-2 w-4 h-4" />
-                Add Achievement
-              </Button>
             </CardContent>
           </Card>
 

@@ -64,14 +64,13 @@ export const insertCelebritySchema = z.object({
     .string()
     .min(1, "Slug is required")
     .regex(/^[a-z0-9-]+$/, "Slug must be lowercase with hyphens only"),
-  category: z.enum(categoryOptions, {
-    required_error: "Category is required",
-  }),
+  category: z.string().min(1, "Category is required"),
   profileImage: z.string().url("Must be a valid image URL"),
   bio: z.string().min(10, "Bio must be at least 10 characters"),
   achievements: z
     .array(z.string().min(1, "Achievement cannot be empty"))
-    .min(1, "At least one achievement is required"),
+    .optional()
+    .default([]),
   socialLinks: z.array(socialLinkSchema).default([]),
   videoUrl: z.string().url("Must be a valid YouTube embed URL").optional().or(z.literal("")),
   gender: z.enum(genderOptions, { required_error: "Gender is required" }),
@@ -79,9 +78,7 @@ export const insertCelebritySchema = z.object({
     .array(z.enum(languageOptions))
     .min(1, "At least one language is required"),
   location: z.string().min(1, "Location is required"),
-  priceRange: z.enum(priceRangeOptions, {
-    required_error: "Price range is required",
-  }),
+  priceRange: z.enum(priceRangeOptions).optional(),
   eventTypes: z
     .array(z.enum(eventTypeOptions))
     .min(1, "At least one event type is required"),
@@ -93,16 +90,16 @@ export type Celebrity = {
   _id: string;
   name: string;
   slug: string;
-  category: typeof categoryOptions[number];
+  category: string;
   profileImage: string;
   bio: string;
-  achievements: string[];
+  achievements?: string[];
   socialLinks: Array<{ platform: typeof socialPlatformOptions[number]; url: string }>;
   videoUrl?: string;
   gender: typeof genderOptions[number];
   languages: Array<typeof languageOptions[number]>;
   location: string;
-  priceRange: typeof priceRangeOptions[number];
+  priceRange?: typeof priceRangeOptions[number];
   eventTypes: Array<typeof eventTypeOptions[number]>;
   isFeatured: boolean;
   createdAt?: Date;
