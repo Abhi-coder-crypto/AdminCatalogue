@@ -1,4 +1,4 @@
-import { Database, LayoutDashboard, UserPlus } from "lucide-react";
+import { Database, LayoutDashboard, UserPlus, FolderOpen } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import {
   Sidebar,
@@ -14,9 +14,9 @@ import {
 
 const menuItems = [
   {
-    title: "Database Setup",
-    url: "/setup",
-    icon: Database,
+    title: "My Catalogues",
+    url: "/catalogues",
+    icon: FolderOpen,
   },
   {
     title: "Dashboard",
@@ -27,6 +27,11 @@ const menuItems = [
     title: "Add Celebrity",
     url: "/add",
     icon: UserPlus,
+  },
+  {
+    title: "Database Setup",
+    url: "/setup",
+    icon: Database,
   },
 ];
 

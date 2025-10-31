@@ -9,6 +9,7 @@ import { AppSidebar } from "@/components/app-sidebar";
 import { Button } from "@/components/ui/button";
 import NotFound from "@/pages/not-found";
 import Setup from "@/pages/setup";
+import Catalogues from "@/pages/catalogues";
 import Dashboard from "@/pages/dashboard";
 import AddCelebrity from "@/pages/add-celebrity";
 import EditCelebrity from "@/pages/edit-celebrity";
@@ -61,7 +62,10 @@ function Router() {
         <ProtectedRoute component={Setup} dbRequired={false} />
       </Route>
       <Route path="/">
-        <ProtectedRoute component={Dashboard} />
+        <ProtectedRoute component={Catalogues} dbRequired={false} />
+      </Route>
+      <Route path="/catalogues">
+        <ProtectedRoute component={Catalogues} dbRequired={false} />
       </Route>
       <Route path="/dashboard">
         <ProtectedRoute component={Dashboard} />

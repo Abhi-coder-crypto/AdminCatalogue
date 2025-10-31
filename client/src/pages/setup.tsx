@@ -38,11 +38,11 @@ export default function Setup() {
     onSuccess: () => {
       toast({
         title: "Success",
-        description: "Celebrity database connected successfully! Redirecting to dashboard...",
+        description: "Celebrity database connected successfully! Redirecting to catalogues...",
       });
       queryClient.invalidateQueries({ queryKey: ["/api/config/mongodb/status"] });
       setTimeout(() => {
-        setLocation("/dashboard");
+        setLocation("/catalogues");
       }, 1500);
     },
     onError: (error: Error) => {
