@@ -1,5 +1,6 @@
-import mongoose, { Schema, Document } from "mongoose";
+import { Schema, Document } from "mongoose";
 import bcrypt from "bcrypt";
+import { adminConnection } from "../mongodb";
 
 export interface AdminDocument extends Document {
   email: string;
@@ -53,4 +54,4 @@ adminSchema.methods.comparePassword = async function (
   return bcrypt.compare(candidatePassword, this.password);
 };
 
-export const AdminModel = mongoose.model<AdminDocument>("Admin", adminSchema);
+export const AdminModel = adminConnection.model<AdminDocument>("Admin", adminSchema);

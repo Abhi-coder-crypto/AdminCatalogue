@@ -5,42 +5,63 @@ import { join } from "path";
 const CONFIG_PATH = join(process.cwd(), ".mongodb-config.json");
 
 interface MongoDBConfig {
-  mongoUri: string;
+  celebrityMongoUri: string;
 }
 
-let isConnected = false;
-let currentUri: string | null = null;
+export const adminConnection = mongoose.createConnection();
+export const celebrityConnection = mongoose.createConnection();
 
-export async function connectToMongoDB(uri: string): Promise<void> {
+let adminConnected = false;
+let celebrityConnected = false;
+let currentCelebrityUri: string | null = null;
+
+export async function connectToAdminMongoDB(uri: string): Promise<void> {
   try {
-    if (isConnected && currentUri === uri) {
+    if (adminConnected && adminConnection.readyState === 1) {
       return;
     }
 
-    if (isConnected) {
-      await mongoose.disconnect();
-      isConnected = false;
-    }
-
-    await mongoose.connect(uri);
-    isConnected = true;
-    currentUri = uri;
-    console.log("MongoDB connected successfully");
+    await adminConnection.openUri(uri);
+    adminConnected = true;
+    console.log("Admin MongoDB connected successfully");
   } catch (error) {
-    isConnected = false;
-    currentUri = null;
+    adminConnected = false;
     throw new Error(
-      `Failed to connect to MongoDB: ${error instanceof Error ? error.message : "Unknown error"}`
+      `Failed to connect to Admin MongoDB: ${error instanceof Error ? error.message : "Unknown error"}`
     );
   }
 }
 
-export function saveMongoConfig(uri: string): void {
-  const config: MongoDBConfig = { mongoUri: uri };
+export async function connectToCelebrityMongoDB(uri: string): Promise<void> {
+  try {
+    if (celebrityConnected && currentCelebrityUri === uri && celebrityConnection.readyState === 1) {
+      return;
+    }
+
+    if (celebrityConnected) {
+      await celebrityConnection.close();
+      celebrityConnected = false;
+    }
+
+    await celebrityConnection.openUri(uri);
+    celebrityConnected = true;
+    currentCelebrityUri = uri;
+    console.log("Celebrity MongoDB connected successfully");
+  } catch (error) {
+    celebrityConnected = false;
+    currentCelebrityUri = null;
+    throw new Error(
+      `Failed to connect to Celebrity MongoDB: ${error instanceof Error ? error.message : "Unknown error"}`
+    );
+  }
+}
+
+export function saveCelebrityMongoConfig(uri: string): void {
+  const config: MongoDBConfig = { celebrityMongoUri: uri };
   writeFileSync(CONFIG_PATH, JSON.stringify(config, null, 2), "utf-8");
 }
 
-export function loadMongoConfig(): MongoDBConfig | null {
+export function loadCelebrityMongoConfig(): MongoDBConfig | null {
   try {
     if (existsSync(CONFIG_PATH)) {
       const data = readFileSync(CONFIG_PATH, "utf-8");
@@ -48,31 +69,42 @@ export function loadMongoConfig(): MongoDBConfig | null {
     }
     return null;
   } catch (error) {
-    console.error("Error loading MongoDB config:", error);
+    console.error("Error loading Celebrity MongoDB config:", error);
     return null;
   }
 }
 
 export function getConnectionStatus(): { connected: boolean; message: string } {
-  if (isConnected && mongoose.connection.readyState === 1) {
+  if (celebrityConnected && celebrityConnection.readyState === 1) {
     return {
       connected: true,
-      message: `Connected to ${mongoose.connection.name || "database"}`,
+      message: `Connected to ${celebrityConnection.name || "celebrity database"}`,
     };
   }
   return {
     connected: false,
-    message: "Not connected to any database",
+    message: "Not connected to celebrity database",
   };
 }
 
 export async function initializeMongoDB(): Promise<void> {
-  const mongoUri = process.env.MONGODB_URI || loadMongoConfig()?.mongoUri;
-  if (mongoUri) {
+  const adminMongoUri = process.env.ADMIN_MONGODB_URI;
+  if (adminMongoUri) {
     try {
-      await connectToMongoDB(mongoUri);
+      await connectToAdminMongoDB(adminMongoUri);
     } catch (error) {
-      console.error("Failed to auto-connect to MongoDB:", error);
+      console.error("Failed to auto-connect to Admin MongoDB:", error);
+    }
+  } else {
+    console.warn("ADMIN_MONGODB_URI not set. Admin authentication will not work.");
+  }
+
+  const celebrityMongoUri = process.env.CELEBRITY_MONGODB_URI || loadCelebrityMongoConfig()?.celebrityMongoUri;
+  if (celebrityMongoUri) {
+    try {
+      await connectToCelebrityMongoDB(celebrityMongoUri);
+    } catch (error) {
+      console.error("Failed to auto-connect to Celebrity MongoDB:", error);
     }
   }
 }

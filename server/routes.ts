@@ -12,8 +12,8 @@ import {
   type Admin,
 } from "@shared/schema";
 import {
-  connectToMongoDB,
-  saveMongoConfig,
+  connectToCelebrityMongoDB,
+  saveCelebrityMongoConfig,
   getConnectionStatus,
   initializeMongoDB,
 } from "./mongodb";
@@ -171,17 +171,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       const { mongoUri } = validation.data;
       
-      await connectToMongoDB(mongoUri);
-      saveMongoConfig(mongoUri);
+      await connectToCelebrityMongoDB(mongoUri);
+      saveCelebrityMongoConfig(mongoUri);
 
       res.json({ 
-        message: "MongoDB configuration saved and connected successfully",
+        message: "Celebrity MongoDB configuration saved and connected successfully",
         connected: true 
       });
     } catch (error) {
-      console.error("MongoDB configuration error:", error);
+      console.error("Celebrity MongoDB configuration error:", error);
       res.status(500).json({
-        message: error instanceof Error ? error.message : "Failed to configure MongoDB",
+        message: error instanceof Error ? error.message : "Failed to configure Celebrity MongoDB",
       });
     }
   });

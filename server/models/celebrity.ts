@@ -1,5 +1,6 @@
-import mongoose, { Schema, Document } from "mongoose";
+import { Schema, Document } from "mongoose";
 import type { Celebrity } from "@shared/schema";
+import { celebrityConnection } from "../mongodb";
 
 export interface CelebrityDocument extends Omit<Celebrity, "_id">, Document {}
 
@@ -74,7 +75,7 @@ const celebritySchema = new Schema<CelebrityDocument>(
   }
 );
 
-export const CelebrityModel = mongoose.model<CelebrityDocument>(
+export const CelebrityModel = celebrityConnection.model<CelebrityDocument>(
   "Celebrity",
   celebritySchema
 );
