@@ -7,6 +7,7 @@ import {
   insertCelebritySchema,
   adminSignupSchema,
   adminLoginSchema,
+  categoryOptions,
   type Celebrity,
   type InsertCelebrity,
   type Admin,
@@ -188,8 +189,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   app.get("/api/categories", requireAuth, async (_req: Request, res: Response) => {
     try {
-      const categories = await CelebrityModel.distinct("category");
-      res.json(categories.sort());
+      res.json([...categoryOptions]);
     } catch (error) {
       console.error("Error fetching categories:", error);
       res.status(500).json({
