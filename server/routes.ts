@@ -160,6 +160,32 @@ export async function registerRoutes(app: Express): Promise<Server> {
     res.json(status);
   });
 
+  app.post("/api/config/mongodb", requireAuth, async (req: Request, res: Response) => {
+    try {
+      const validation = mongoConfigSchema.safeParse(req.body);
+      if (!validation.success) {
+        return res.status(400).json({
+          message: fromError(validation.error).toString(),
+        });
+      }
+
+      const { mongoUri } = validation.data;
+      
+      await connectToMongoDB(mongoUri);
+      saveMongoConfig(mongoUri);
+
+      res.json({ 
+        message: "MongoDB configuration saved and connected successfully",
+        connected: true 
+      });
+    } catch (error) {
+      console.error("MongoDB configuration error:", error);
+      res.status(500).json({
+        message: error instanceof Error ? error.message : "Failed to configure MongoDB",
+      });
+    }
+  });
+
   app.get("/api/celebrities", requireAuth, async (_req: Request, res: Response) => {
     try {
       const celebrities = await CelebrityModel.find().sort({ createdAt: -1 });

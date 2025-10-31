@@ -19,6 +19,7 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Dashboard} />
+      <Route path="/setup" component={Setup} />
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/add" component={AddCelebrity} />
       <Route path="/edit/:id" component={EditCelebrity} />

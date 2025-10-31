@@ -15,7 +15,7 @@ import {
 const menuItems = [
   {
     title: "Database Setup",
-    url: "/",
+    url: "/setup",
     icon: Database,
   },
   {
