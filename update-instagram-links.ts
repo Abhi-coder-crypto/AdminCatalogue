@@ -1,5 +1,5 @@
 import { CelebrityModel } from "./server/models/celebrity";
-import { adminConnection, celebrityConnection } from "./server/mongodb";
+import { initializeMongoDB } from "./server/mongodb";
 
 // Mapping of singer names to Instagram URLs
 const instagramUpdates: Record<string, string> = {
@@ -46,6 +46,10 @@ function isInstagram(url: string): boolean {
 async function updateSocialLinks() {
   try {
     console.log("Starting social links update...");
+    
+    // Initialize MongoDB connections
+    await initializeMongoDB();
+    console.log("Database connections initialized");
     
     // Fetch all celebrities
     const celebrities = await CelebrityModel.find({});
