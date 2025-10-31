@@ -9,9 +9,9 @@ import {
   type InsertCelebrity,
   type Celebrity,
   genderOptions,
+  priceRangeOptions,
   eventTypeOptions,
   languageOptions,
-  socialPlatformOptions,
 } from "@shared/schema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -62,11 +62,13 @@ export default function EditCelebrity() {
       category: "",
       image: "",
       bio: "",
+      achievements: [],
       socialLinks: [],
       videoUrl: "",
       gender: undefined,
       language: [],
       location: "",
+      priceRange: undefined,
       eventTypes: [],
       isFeatured: false,
     },
@@ -80,16 +82,27 @@ export default function EditCelebrity() {
         category: celebrity.category,
         image: celebrity.image,
         bio: celebrity.bio,
-        socialLinks: celebrity.socialLinks,
+        achievements: celebrity.achievements || [],
+        socialLinks: celebrity.socialLinks || [],
         videoUrl: celebrity.videoUrl || "",
         gender: celebrity.gender,
         language: celebrity.language,
         location: celebrity.location,
+        priceRange: celebrity.priceRange,
         eventTypes: celebrity.eventTypes,
         isFeatured: celebrity.isFeatured,
       });
     }
   }, [celebrity, form]);
+
+  const {
+    fields: achievementFields,
+    append: appendAchievement,
+    remove: removeAchievement,
+  } = useFieldArray({
+    control: form.control,
+    name: "achievements",
+  });
 
   const {
     fields: socialLinkFields,
@@ -381,23 +394,50 @@ export default function EditCelebrity() {
                 )}
               />
 
-              <FormField
-                control={form.control}
-                name="location"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Location</FormLabel>
-                    <FormControl>
-                      <Input
-                        {...field}
-                        placeholder="e.g., Mumbai"
-                        data-testid="input-location"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <FormField
+                  control={form.control}
+                  name="location"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Location</FormLabel>
+                      <FormControl>
+                        <Input
+                          {...field}
+                          placeholder="e.g., Mumbai"
+                          data-testid="input-location"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="priceRange"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Price Range</FormLabel>
+                      <Select onValueChange={field.onChange} value={field.value}>
+                        <FormControl>
+                          <SelectTrigger data-testid="select-price-range">
+                            <SelectValue placeholder="Select price range" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          {priceRangeOptions.map((range) => (
+                            <SelectItem key={range} value={range}>
+                              {range}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
 
               <FormField
                 control={form.control}
@@ -489,6 +529,53 @@ export default function EditCelebrity() {
 
           <Card>
             <CardHeader>
+              <CardTitle>Achievements</CardTitle>
+              <CardDescription>Notable accomplishments and recognition</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {achievementFields.map((field, index) => (
+                <div key={field.id} className="flex gap-2">
+                  <FormField
+                    control={form.control}
+                    name={`achievements.${index}`}
+                    render={({ field }) => (
+                      <FormItem className="flex-1">
+                        <FormControl>
+                          <Input
+                            {...field}
+                            placeholder="e.g., Grammy Award Winner"
+                            data-testid={`input-achievement-${index}`}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="icon"
+                    onClick={() => removeAchievement(index)}
+                    data-testid={`button-remove-achievement-${index}`}
+                  >
+                    <X className="w-4 h-4" />
+                  </Button>
+                </div>
+              ))}
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => appendAchievement("")}
+                data-testid="button-add-achievement"
+              >
+                <Plus className="mr-2 w-4 h-4" />
+                Add Achievement
+              </Button>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
               <CardTitle>Social Links</CardTitle>
               <CardDescription>Social media profiles and online presence</CardDescription>
             </CardHeader>
@@ -497,37 +584,14 @@ export default function EditCelebrity() {
                 <div key={field.id} className="flex gap-2">
                   <FormField
                     control={form.control}
-                    name={`socialLinks.${index}.platform`}
-                    render={({ field }) => (
-                      <FormItem className="w-[180px]">
-                        <Select onValueChange={field.onChange} value={field.value}>
-                          <FormControl>
-                            <SelectTrigger data-testid={`select-social-platform-${index}`}>
-                              <SelectValue placeholder="Platform" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            {socialPlatformOptions.map((platform) => (
-                              <SelectItem key={platform} value={platform}>
-                                {platform}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name={`socialLinks.${index}.url`}
+                    name={`socialLinks.${index}`}
                     render={({ field }) => (
                       <FormItem className="flex-1">
                         <FormControl>
                           <Input
                             {...field}
                             type="url"
-                            placeholder="https://..."
+                            placeholder="https://instagram.com/username"
                             data-testid={`input-social-url-${index}`}
                           />
                         </FormControl>
@@ -549,7 +613,7 @@ export default function EditCelebrity() {
               <Button
                 type="button"
                 variant="outline"
-                onClick={() => appendSocialLink({ platform: "Instagram", url: "" })}
+                onClick={() => appendSocialLink("")}
                 data-testid="button-add-social-link"
               >
                 <Plus className="mr-2 w-4 h-4" />
