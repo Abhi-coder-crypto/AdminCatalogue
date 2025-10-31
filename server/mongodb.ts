@@ -67,10 +67,10 @@ export function getConnectionStatus(): { connected: boolean; message: string } {
 }
 
 export async function initializeMongoDB(): Promise<void> {
-  const config = loadMongoConfig();
-  if (config?.mongoUri) {
+  const mongoUri = process.env.MONGODB_URI || loadMongoConfig()?.mongoUri;
+  if (mongoUri) {
     try {
-      await connectToMongoDB(config.mongoUri);
+      await connectToMongoDB(mongoUri);
     } catch (error) {
       console.error("Failed to auto-connect to MongoDB:", error);
     }
