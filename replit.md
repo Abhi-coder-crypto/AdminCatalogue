@@ -33,6 +33,11 @@ Preferred communication style: Simple, everyday language.
 - Sidebar width: 16rem (expanded), 3rem (collapsed), 18rem (mobile)
 - Responsive design with mobile-first breakpoint at 768px
 - Fixed header with sidebar trigger and scrollable main content area
+- Smart routing with ProtectedRoute component:
+  - Checks celebrity database connection status using React Query (cached for 30s)
+  - Automatically redirects to /setup if database not connected
+  - Graceful error handling with retry functionality
+  - Prevents redirect loops during cache updates with isFetching guard
 
 ### Backend Architecture
 
@@ -42,9 +47,13 @@ Preferred communication style: Simple, everyday language.
 - JSON request body parsing with raw body preservation for webhook support
 
 **Database Layer:**
-- MongoDB with Mongoose ODM for document-based data storage
+- **Dual MongoDB Architecture:**
+  - **Admin Database**: Dedicated connection for admin authentication (ADMIN_MONGODB_URI environment variable)
+  - **Celebrity Database**: Separate connection for celebrity data (configured via setup page, saved to .mongodb-config.json)
+- MongoDB with Mongoose ODM using separate connection instances (adminConnection and celebrityConnection)
 - Connection pooling with persistent connection management
-- Configuration persistence via local JSON file (.mongodb-config.json)
+- Smart routing: Automatically redirects to setup if celebrity database not connected
+- Configuration persistence: Admin DB via environment variable, Celebrity DB via local JSON file
 - Drizzle ORM configured (for future PostgreSQL migration if needed)
 
 **Data Models:**
