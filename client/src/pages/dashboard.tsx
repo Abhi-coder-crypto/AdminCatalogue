@@ -264,7 +264,7 @@ export default function Dashboard() {
                       <TableCell>
                         <div className="flex items-center gap-3">
                           <Avatar className="w-12 h-12">
-                            <AvatarImage src={celebrity.profileImage} alt={celebrity.name} />
+                            <AvatarImage src={celebrity.image} alt={celebrity.name} />
                             <AvatarFallback>
                               {celebrity.name
                                 .split(" ")
@@ -289,15 +289,19 @@ export default function Dashboard() {
                         {celebrity.location}
                       </TableCell>
                       <TableCell>
-                        <Badge
-                          variant={
-                            celebrity.priceRange === "Premium"
-                              ? "default"
-                              : "outline"
-                          }
-                        >
-                          {celebrity.priceRange}
-                        </Badge>
+                        {celebrity.priceRange ? (
+                          <Badge
+                            variant={
+                              celebrity.priceRange === "Premium"
+                                ? "default"
+                                : "outline"
+                            }
+                          >
+                            {celebrity.priceRange}
+                          </Badge>
+                        ) : (
+                          <span className="text-sm text-muted-foreground">-</span>
+                        )}
                       </TableCell>
                       <TableCell>
                         <div className="flex items-center gap-2">

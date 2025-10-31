@@ -65,16 +65,16 @@ export const insertCelebritySchema = z.object({
     .min(1, "Slug is required")
     .regex(/^[a-z0-9-]+$/, "Slug must be lowercase with hyphens only"),
   category: z.string().min(1, "Category is required"),
-  profileImage: z.string().url("Must be a valid image URL"),
+  image: z.string().url("Must be a valid image URL"),
   bio: z.string().min(10, "Bio must be at least 10 characters"),
   achievements: z
     .array(z.string().min(1, "Achievement cannot be empty"))
     .optional()
     .default([]),
-  socialLinks: z.array(socialLinkSchema).default([]),
+  socialLinks: z.array(z.string().url()).default([]),
   videoUrl: z.string().url("Must be a valid YouTube embed URL").optional().or(z.literal("")),
   gender: z.enum(genderOptions, { required_error: "Gender is required" }),
-  languages: z
+  language: z
     .array(z.enum(languageOptions))
     .min(1, "At least one language is required"),
   location: z.string().min(1, "Location is required"),
@@ -91,17 +91,18 @@ export type Celebrity = {
   name: string;
   slug: string;
   category: string;
-  profileImage: string;
+  image: string;
   bio: string;
   achievements?: string[];
-  socialLinks: Array<{ platform: typeof socialPlatformOptions[number]; url: string }>;
+  socialLinks: string[];
   videoUrl?: string;
   gender: typeof genderOptions[number];
-  languages: Array<typeof languageOptions[number]>;
+  language: Array<typeof languageOptions[number]>;
   location: string;
   priceRange?: typeof priceRangeOptions[number];
   eventTypes: Array<typeof eventTypeOptions[number]>;
   isFeatured: boolean;
+  views?: number;
   createdAt?: Date;
   updatedAt?: Date;
 };

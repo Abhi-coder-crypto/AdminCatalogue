@@ -52,12 +52,12 @@ export default function AddCelebrity() {
       name: "",
       slug: "",
       category: "",
-      profileImage: "",
+      image: "",
       bio: "",
       socialLinks: [],
       videoUrl: "",
       gender: undefined,
-      languages: [],
+      language: [],
       location: "",
       eventTypes: [],
       isFeatured: false,
@@ -114,7 +114,7 @@ export default function AddCelebrity() {
     }
   };
 
-  const profileImageUrl = form.watch("profileImage");
+  const imageUrl = form.watch("image");
 
   return (
     <div className="max-w-4xl mx-auto">
@@ -233,7 +233,7 @@ export default function AddCelebrity() {
             <CardContent className="space-y-6">
               <FormField
                 control={form.control}
-                name="profileImage"
+                name="image"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Profile Image URL</FormLabel>
@@ -251,11 +251,11 @@ export default function AddCelebrity() {
                 )}
               />
 
-              {profileImageUrl && (
+              {imageUrl && (
                 <div className="border rounded-lg p-4">
                   <p className="text-sm font-medium mb-2">Preview</p>
                   <img
-                    src={profileImageUrl}
+                    src={imageUrl}
                     alt="Profile preview"
                     className="max-h-40 rounded-lg object-cover"
                     onError={(e) => {
@@ -265,7 +265,7 @@ export default function AddCelebrity() {
                 </div>
               )}
 
-              {!profileImageUrl && (
+              {!imageUrl && (
                 <div className="border-2 border-dashed rounded-lg p-8 text-center">
                   <ImageIcon className="w-12 h-12 mx-auto text-muted-foreground mb-2" />
                   <p className="text-sm text-muted-foreground">No image uploaded</p>
@@ -340,7 +340,7 @@ export default function AddCelebrity() {
 
               <FormField
                 control={form.control}
-                name="languages"
+                name="language"
                 render={() => (
                   <FormItem>
                     <FormLabel>Languages</FormLabel>
@@ -349,7 +349,7 @@ export default function AddCelebrity() {
                         <FormField
                           key={language}
                           control={form.control}
-                          name="languages"
+                          name="language"
                           render={({ field }) => {
                             return (
                               <FormItem

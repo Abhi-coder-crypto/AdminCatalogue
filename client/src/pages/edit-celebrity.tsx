@@ -60,12 +60,12 @@ export default function EditCelebrity() {
       name: "",
       slug: "",
       category: "",
-      profileImage: "",
+      image: "",
       bio: "",
       socialLinks: [],
       videoUrl: "",
       gender: undefined,
-      languages: [],
+      language: [],
       location: "",
       eventTypes: [],
       isFeatured: false,
@@ -78,12 +78,12 @@ export default function EditCelebrity() {
         name: celebrity.name,
         slug: celebrity.slug,
         category: celebrity.category,
-        profileImage: celebrity.profileImage,
+        image: celebrity.image,
         bio: celebrity.bio,
         socialLinks: celebrity.socialLinks,
         videoUrl: celebrity.videoUrl || "",
         gender: celebrity.gender,
-        languages: celebrity.languages,
+        language: celebrity.language,
         location: celebrity.location,
         eventTypes: celebrity.eventTypes,
         isFeatured: celebrity.isFeatured,
@@ -142,7 +142,7 @@ export default function EditCelebrity() {
     }
   };
 
-  const profileImageUrl = form.watch("profileImage");
+  const imageUrl = form.watch("image");
 
   if (isLoading) {
     return (
@@ -301,7 +301,7 @@ export default function EditCelebrity() {
             <CardContent className="space-y-6">
               <FormField
                 control={form.control}
-                name="profileImage"
+                name="image"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Profile Image URL</FormLabel>
@@ -319,11 +319,11 @@ export default function EditCelebrity() {
                 )}
               />
 
-              {profileImageUrl && (
+              {imageUrl && (
                 <div className="border rounded-lg p-4">
                   <p className="text-sm font-medium mb-2">Preview</p>
                   <img
-                    src={profileImageUrl}
+                    src={imageUrl}
                     alt="Profile preview"
                     className="max-h-40 rounded-lg object-cover"
                     onError={(e) => {
@@ -401,7 +401,7 @@ export default function EditCelebrity() {
 
               <FormField
                 control={form.control}
-                name="languages"
+                name="language"
                 render={() => (
                   <FormItem>
                     <FormLabel>Languages</FormLabel>
@@ -410,7 +410,7 @@ export default function EditCelebrity() {
                         <FormField
                           key={language}
                           control={form.control}
-                          name="languages"
+                          name="language"
                           render={({ field }) => {
                             return (
                               <FormItem
