@@ -1,0 +1,762 @@
+[
+  {
+    "_id": "69047e4889db0b48eb2aee4b",
+    "name": "Asees Kaur",
+    "slug": "asees-kaur",
+    "category": "Singers",
+    "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=800",
+    "bio": "Asees Kaur is an Indian playback singer born on September 26, 1988, in Panipat, Haryana. She started singing Gurbani at age 5 and trained under Ustad Puran Shahkoti. Her breakthrough came with Bolna from Kapoor & Sons (2016) with Arijit Singh. Her biggest hit Raatan Lambiyan from Shershaah (2021) won her an IIFA Award and became one of the most-streamed Bollywood tracks.",
+    "achievements": [
+      "IIFA Award for Best Female Playback Singer",
+      "2 Filmfare Awards",
+      "Mirchi Music Award for Female Vocalist",
+      "Raatan Lambiyan - Massive hit",
+      "Featured at Times Square NYC"
+    ],
+    "socialLinks": [
+      "https://www.instagram.com/aseeskaurmusic",
+      "https://www.facebook.com/AseesKaurOfficial"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/Jjdr753Nis4",
+    "gender": "Female",
+    "language": [
+      "Hindi",
+      "Punjabi",
+      "Bengali",
+      "Marathi"
+    ],
+    "location": "Mumbai, Maharashtra",
+    "priceRange": "Mid-Range",
+    "eventTypes": [
+      "Wedding",
+      "Concert",
+      "Corporate"
+    ],
+    "isFeatured": false,
+    "views": 1,
+    "createdAt": "2025-10-31T09:15:52.813Z",
+    "updatedAt": "2025-10-31T09:15:52.813Z"
+  },
+  {
+    "_id": "69047e4589db0b48eb2aee48",
+    "name": "Armaan Malik",
+    "slug": "armaan-malik",
+    "category": "Singers",
+    "image": "https://images.unsplash.com/photo-1542909192-2f2241a99c9d?w=800",
+    "bio": "Armaan Malik is an Indian playback singer, songwriter, and record producer born on July 22, 1995, in Mumbai. He is the son of music composer Daboo Malik and nephew of Anu Malik. His breakthrough came with Main Rahoon Ya Na Rahoon (2015). He won the Filmfare RD Burman Award and has 16.7M+ monthly Spotify listeners. He is also signed with Arista Records for English music.",
+    "achievements": [
+      "Filmfare RD Burman Award (2015)",
+      "GIMA Best Debutant Singer Award",
+      "MTV Europe Music Award - Best Indian Act",
+      "16.7M+ monthly Spotify listeners",
+      "Honors in Music from Berklee College"
+    ],
+    "socialLinks": [
+      "https://www.instagram.com/armaanmalik",
+      "https://www.facebook.com/ArmaanMalikOfficial"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/tZpQh_qNLmY",
+    "gender": "Male",
+    "language": [
+      "Hindi",
+      "Telugu",
+      "Tamil",
+      "English",
+      "Bengali",
+      "Kannada"
+    ],
+    "location": "Mumbai, Maharashtra",
+    "priceRange": "Mid-Range",
+    "eventTypes": [
+      "Wedding",
+      "Concert",
+      "Corporate"
+    ],
+    "isFeatured": false,
+    "views": 0,
+    "createdAt": "2025-10-31T09:15:49.595Z",
+    "updatedAt": "2025-10-31T09:15:49.595Z"
+  },
+  {
+    "_id": "69047e3e89db0b48eb2aee45",
+    "name": "Arijit Singh",
+    "slug": "arijit-singh",
+    "category": "Singers",
+    "image": "https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800",
+    "bio": "Arijit Singh is one of India's most celebrated playback singers, born on April 25, 1987, in Jiaganj, West Bengal. He achieved breakthrough success with Tum Hi Ho from Aashiqui 2 (2013). With 8 Filmfare Awards, 2 National Film Awards, and the Padma Shri (2025), he is known for his soulful voice and emotional depth. He's Spotify's most-streamed Indian artist for 5 consecutive years.",
+    "achievements": [
+      "Padma Shri (2025)",
+      "2 National Film Awards",
+      "8 Filmfare Awards",
+      "5 IIFA Awards",
+      "Spotify Most-Streamed Indian Artist (2020-2024)",
+      "Record 5 consecutive Filmfare wins"
+    ],
+    "socialLinks": [
+      "https://www.instagram.com/arijitsingh",
+      "https://www.facebook.com/ArijitSingh"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/Umqb9KENgmk",
+    "gender": "Male",
+    "language": [
+      "Hindi",
+      "Bengali",
+      "Tamil",
+      "Telugu"
+    ],
+    "location": "Mumbai, Maharashtra",
+    "priceRange": "Premium",
+    "eventTypes": [
+      "Concert",
+      "Wedding",
+      "Corporate"
+    ],
+    "isFeatured": true,
+    "views": 0,
+    "createdAt": "2025-10-31T09:15:42.268Z",
+    "updatedAt": "2025-10-31T09:15:42.268Z"
+  },
+  {
+    "_id": "69047e3789db0b48eb2aee42",
+    "name": "Anushka Manchanda",
+    "slug": "anushka-manchanda",
+    "category": "Singers",
+    "image": "https://images.unsplash.com/photo-1485875437342-9b39470b3d95?w=800",
+    "bio": "Anushka Manchanda, also known as Kiss Nuka, is an Indian singer, VJ, music producer, and actress born on February 11, 1984, in Delhi. She rose to fame by winning Coke V Popstars in 2002 and forming India's first successful all-girl pop group Viva. Her Bollywood hit Dum Maaro Dum (2011) won her the Zee Cine Award for Best Female Playback Singer.",
+    "achievements": [
+      "Zee Cine Award for Dum Maaro Dum",
+      "Winner of Khatron Ke Khiladi",
+      "Music Head at IncInk Records",
+      "GIMA Award for Kiss Nuka",
+      "3.5M+ monthly Spotify listeners"
+    ],
+    "socialLinks": [
+      "https://www.instagram.com/iamanushka",
+      "https://anushkamanchanda.com"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/FXAgw0g4bZ0",
+    "gender": "Female",
+    "language": [
+      "Hindi",
+      "English",
+      "Tamil"
+    ],
+    "location": "Mumbai, Maharashtra",
+    "priceRange": "Mid-Range",
+    "eventTypes": [
+      "Concert",
+      "Wedding",
+      "Private Party",
+      "Corporate"
+    ],
+    "isFeatured": false,
+    "views": 0,
+    "createdAt": "2025-10-31T09:15:35.422Z",
+    "updatedAt": "2025-10-31T09:15:35.422Z"
+  },
+  {
+    "_id": "69047dfd9e85363833f72461",
+    "name": "Anuradha Paudwal",
+    "slug": "anuradha-paudwal",
+    "category": "Singers",
+    "image": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800",
+    "bio": "Anuradha Paudwal, known as the Bhajan Queen, was born on October 27, 1954, in Karwar, Karnataka. She has recorded over 9,000 songs and 1,500+ bhajans across 25+ languages. She won 4 Filmfare Awards and was honored with the Padma Shri in 2017. Her devotional albums like Gayatri Mantra and Hanuman Amritwani have billions of views.",
+    "achievements": [
+      "Padma Shri (2017)",
+      "4 Filmfare Awards",
+      "National Film Award",
+      "9,000+ songs and 1,500+ bhajans",
+      "Guinness World Record holder",
+      "Lata Mangeshkar Award (2010)"
+    ],
+    "socialLinks": [
+      "https://www.facebook.com/AnuradhaPaudwalOfficial"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/ven8xBmDXJo",
+    "gender": "Female",
+    "language": [
+      "Hindi",
+      "Marathi",
+      "Bengali",
+      "Tamil",
+      "Telugu",
+      "Gujarati"
+    ],
+    "location": "Mumbai, Maharashtra",
+    "priceRange": "Premium",
+    "eventTypes": [
+      "Concert",
+      "Wedding",
+      "Corporate"
+    ],
+    "isFeatured": true,
+    "views": 0,
+    "createdAt": "2025-10-31T09:14:37.103Z",
+    "updatedAt": "2025-10-31T09:14:37.103Z"
+  },
+  {
+    "_id": "69047df69e85363833f7245e",
+    "name": "Anu Malik",
+    "slug": "anu-malik",
+    "category": "Singers",
+    "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800",
+    "bio": "Anu Malik is an Indian music composer and singer born on November 2, 1960. He is the son of veteran music director Sardar Malik and has composed music for over 350 films. His breakthrough came with Baazigar (1993), which sold 10 million copies. He won a National Film Award for Refugee (2000) and 3 Filmfare Awards for Best Music Director.",
+    "achievements": [
+      "National Film Award for Refugee",
+      "3 Filmfare Awards for Best Music Director",
+      "Baazigar - 10 million copies sold",
+      "350+ films composed",
+      "Judge on Indian Idol"
+    ],
+    "socialLinks": [
+      "https://www.facebook.com/AnuMalikOfficial"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/3Tm_IPLQ3js",
+    "gender": "Male",
+    "language": [
+      "Hindi",
+      "Punjabi",
+      "Tamil"
+    ],
+    "location": "Mumbai, Maharashtra",
+    "priceRange": "Premium",
+    "eventTypes": [
+      "Concert",
+      "Wedding",
+      "Corporate"
+    ],
+    "isFeatured": false,
+    "views": 0,
+    "createdAt": "2025-10-31T09:14:30.555Z",
+    "updatedAt": "2025-10-31T09:14:30.555Z"
+  },
+  {
+    "_id": "69047df19e85363833f7245b",
+    "name": "Ankit Tiwari",
+    "slug": "ankit-tiwari",
+    "category": "Singers",
+    "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800",
+    "bio": "Ankit Tiwari is an Indian playback singer and music composer born on March 6, 1986, in Kanpur. He gained fame with Sunn Raha Hai from Aashiqui 2 (2013) and won the Filmfare Award for Best Male Playback Singer for Galliyan from Ek Villain (2014). He is known for romantic ballads and soulful melodies, launching his music label Mist Music in 2022.",
+    "achievements": [
+      "Filmfare Award for Best Male Playback Singer",
+      "3 Filmfare Awards for Best Music Director",
+      "30+ total awards",
+      "Galliyan - Massive hit",
+      "Trained in classical music and piano"
+    ],
+    "socialLinks": [
+      "https://www.instagram.com/officialankittiwari"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/ydPLG5baFEw",
+    "gender": "Male",
+    "language": [
+      "Hindi",
+      "Bengali"
+    ],
+    "location": "Mumbai, Maharashtra",
+    "priceRange": "Mid-Range",
+    "eventTypes": [
+      "Wedding",
+      "Concert",
+      "Corporate"
+    ],
+    "isFeatured": false,
+    "views": 0,
+    "createdAt": "2025-10-31T09:14:25.431Z",
+    "updatedAt": "2025-10-31T09:14:25.431Z"
+  },
+  {
+    "_id": "69047deb9e85363833f72458",
+    "name": "Amitabh Bhattacharya",
+    "slug": "amitabh-bhattacharya",
+    "category": "Singers",
+    "image": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=800",
+    "bio": "Amitabh Bhattacharya is an Indian lyricist, playback singer, and film producer born on November 16, 1976, in Mumbai. He made his debut with Aamir (2008) and achieved breakthrough success with Emotional Atyachar from Dev.D (2009). He has won a National Film Award and multiple Filmfare Awards for hit songs like Channa Mereya, Abhi Mujh Mein Kahin, and Kesariya.",
+    "achievements": [
+      "National Film Award for Best Lyrics",
+      "2 Filmfare Awards for Best Lyricist",
+      "Channa Mereya - 9 awards",
+      "34 wins and 72 nominations",
+      "Worked with Pritam and Amit Trivedi"
+    ],
+    "socialLinks": [
+      "https://www.instagram.com/amitabhbhattacharyaofficial",
+      "https://www.facebook.com/AmitabhBhattacharyaOfficial"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/bzSTpdcs-EA",
+    "gender": "Male",
+    "language": [
+      "Hindi",
+      "Bengali"
+    ],
+    "location": "Mumbai, Maharashtra",
+    "priceRange": "Premium",
+    "eventTypes": [
+      "Concert",
+      "Corporate"
+    ],
+    "isFeatured": false,
+    "views": 0,
+    "createdAt": "2025-10-31T09:14:19.548Z",
+    "updatedAt": "2025-10-31T09:14:19.548Z"
+  },
+  {
+    "_id": "69047ddd9e85363833f72455",
+    "name": "Amit Trivedi",
+    "slug": "amit-trivedi",
+    "category": "Singers",
+    "image": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=800",
+    "bio": "Amit Trivedi is an Indian music director, singer, and lyricist born on April 8, 1979, in Mumbai. He revolutionized Bollywood music with his debut album Dev.D (2009), which won him a National Film Award. Known for his versatility across genres, his notable works include Wake Up Sid, Queen, Udta Punjab, Andhadhun, and Jubilee. He has won 15+ awards.",
+    "achievements": [
+      "National Film Award for Dev.D",
+      "Filmfare RD Burman Award",
+      "15+ wins and 44+ nominations",
+      "Dev.D - 18-track groundbreaking album",
+      "Coke Studio @ MTV composer"
+    ],
+    "socialLinks": [
+      "https://www.instagram.com/amittrivedi",
+      "https://www.facebook.com/AmitTrivediMusic"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/QbTbs5f8f7M",
+    "gender": "Male",
+    "language": [
+      "Hindi",
+      "Tamil",
+      "Marathi",
+      "Bengali"
+    ],
+    "location": "Mumbai, Maharashtra",
+    "priceRange": "Premium",
+    "eventTypes": [
+      "Concert",
+      "Corporate"
+    ],
+    "isFeatured": true,
+    "views": 0,
+    "createdAt": "2025-10-31T09:14:05.426Z",
+    "updatedAt": "2025-10-31T09:14:05.426Z"
+  },
+  {
+    "_id": "69047dd79e85363833f72452",
+    "name": "Amit Mishra",
+    "slug": "amit-mishra",
+    "category": "Singers",
+    "image": "https://images.unsplash.com/photo-1463453091185-61582044d556?w=800",
+    "bio": "Amit Mishra is an Indian playback singer born on February 15, 1989, in Lucknow. He is a trained classical vocalist from Bhatkhande Music Institute. His breakthrough came with Bulleya from Ae Dil Hai Mushkil (2016), which won him the Filmfare RD Burman Award, Screen Award, and IIFA Award. He was the lead vocalist of band TRISHNA.",
+    "achievements": [
+      "Filmfare RD Burman Award (2017)",
+      "Screen Award for Best Male Playback",
+      "IIFA Award for Best Male Playback Singer",
+      "Bulleya - Career-defining hit",
+      "Classical music training"
+    ],
+    "socialLinks": [
+      "https://www.instagram.com/amitmishraofficial"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/lJ03hxBl5rM",
+    "gender": "Male",
+    "language": [
+      "Hindi",
+      "Telugu",
+      "Bengali",
+      "Marathi"
+    ],
+    "location": "Mumbai, Maharashtra",
+    "priceRange": "Mid-Range",
+    "eventTypes": [
+      "Concert",
+      "Wedding",
+      "Corporate"
+    ],
+    "isFeatured": false,
+    "views": 0,
+    "createdAt": "2025-10-31T09:13:59.330Z",
+    "updatedAt": "2025-10-31T09:13:59.330Z"
+  },
+  {
+    "_id": "69047dd09e85363833f7244f",
+    "name": "Amit Kumar",
+    "slug": "amit-kumar",
+    "category": "Singers",
+    "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800",
+    "bio": "Amit Kumar Ganguly is an Indian playback singer, actor, and music director born on July 3, 1952, in Mumbai. He is the son of legendary singer Kishore Kumar. His breakthrough came with Bade Achchhe Lagte Hain (1976), and he won the Filmfare Award for Yaad Aa Rahi Hai from Love Story (1981). He became the voice of many actors in the 1980s-90s.",
+    "achievements": [
+      "Filmfare Award for Best Male Playback Singer",
+      "Son of Kishore Kumar",
+      "Voice of Anil Kapoor and Kumar Gaurav",
+      "Worked with R.D. Burman for 20 years",
+      "40+ years in music industry"
+    ],
+    "socialLinks": [
+      "https://www.facebook.com/amitkumarofficial"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/Rc-Jh3Oe0Gc",
+    "gender": "Male",
+    "language": [
+      "Hindi",
+      "Bengali",
+      "Marathi"
+    ],
+    "location": "Mumbai, Maharashtra",
+    "priceRange": "Premium",
+    "eventTypes": [
+      "Concert",
+      "Wedding",
+      "Corporate"
+    ],
+    "isFeatured": false,
+    "views": 0,
+    "createdAt": "2025-10-31T09:13:52.828Z",
+    "updatedAt": "2025-10-31T09:13:52.828Z"
+  },
+  {
+    "_id": "69047dca9e85363833f7244c",
+    "name": "Alisha Chinai",
+    "slug": "alisha-chinai",
+    "category": "Singers",
+    "image": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=800",
+    "bio": "Alisha Chinai, known as the Queen of Indipop and Indian Madonna, was born on March 18, 1965, in Ahmedabad. Her album Made in India (1995) sold over 5 million copies, becoming the first Hindi pop album to achieve this milestone. She won the Filmfare Award for Best Female Playback Singer for Kajra Re from Bunty Aur Babli (2005).",
+    "achievements": [
+      "Filmfare Award for Kajra Re",
+      "Made in India - 5 million copies sold",
+      "International Billboard Award (1995)",
+      "Freddie Mercury Award",
+      "Judge on Indian Idol Season 3"
+    ],
+    "socialLinks": [
+      "https://www.instagram.com/alishachinai",
+      "http://www.alishachinai.com"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/vTIIMJ9tUc8",
+    "gender": "Female",
+    "language": [
+      "Hindi",
+      "English",
+      "Gujarati"
+    ],
+    "location": "Mumbai, Maharashtra",
+    "priceRange": "Premium",
+    "eventTypes": [
+      "Concert",
+      "Wedding",
+      "Private Party"
+    ],
+    "isFeatured": false,
+    "views": 0,
+    "createdAt": "2025-10-31T09:13:46.384Z",
+    "updatedAt": "2025-10-31T09:13:46.384Z"
+  },
+  {
+    "_id": "69047d86f236d7cddf4a1c50",
+    "name": "Ali Zafar",
+    "slug": "ali-zafar",
+    "category": "Singers",
+    "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800",
+    "bio": "Ali Zafar is a Pakistani singer-songwriter, actor, model, and painter born on May 18, 1980, in Lahore. His album Huqa Pani (2003) sold over 5 million copies worldwide. He became the first Pakistani lead actor in mainstream Bollywood with Tere Bin Laden (2010). His hit song Channo and Rockstar from Coke Studio made him a household name.",
+    "achievements": [
+      "5 Lux Style Awards",
+      "MTV Music Asia Award",
+      "Huqa Pani - 5 million copies sold",
+      "Voted Sexiest Asian Man (2013)",
+      "Pakistan Super League anthem composer"
+    ],
+    "socialLinks": [
+      "https://www.instagram.com/ali_zafar",
+      "https://www.facebook.com/alizafarofficial",
+      "https://www.alizafar.net"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/EXRKUHHuNiE",
+    "gender": "Male",
+    "language": [
+      "Hindi",
+      "Urdu",
+      "Punjabi",
+      "English"
+    ],
+    "location": "Lahore, Pakistan",
+    "priceRange": "Premium",
+    "eventTypes": [
+      "Concert",
+      "Wedding",
+      "Corporate"
+    ],
+    "isFeatured": false,
+    "views": 0,
+    "createdAt": "2025-10-31T09:12:38.236Z",
+    "updatedAt": "2025-10-31T09:12:38.236Z"
+  },
+  {
+    "_id": "69047d7ff236d7cddf4a1c4d",
+    "name": "Alka Yagnik",
+    "slug": "alka-yagnik",
+    "category": "Singers",
+    "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800",
+    "bio": "Alka Yagnik is the Melody Queen of Indian Cinema, born on March 20, 1966, in Kolkata. With over 22,000 songs in 25+ languages, she holds multiple Guinness World Records for being the most-streamed Indian artist. She has won 7 Filmfare Awards and 2 National Film Awards, dominating Bollywood music in the 1990s and 2000s.",
+    "achievements": [
+      "2 National Film Awards",
+      "7 Filmfare Awards",
+      "36-37 Filmfare nominations (record)",
+      "Guinness World Record - Most-streamed artist",
+      "Lata Mangeshkar Award (2019)",
+      "22,000+ songs recorded"
+    ],
+    "socialLinks": [
+      "https://www.instagram.com/alkayagnik",
+      "https://www.facebook.com/AlkaYagnikOfficial"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/kKaW7BLqEhU",
+    "gender": "Female",
+    "language": [
+      "Hindi",
+      "Bengali",
+      "Gujarati",
+      "Tamil",
+      "Telugu",
+      "Marathi"
+    ],
+    "location": "Mumbai, Maharashtra",
+    "priceRange": "Premium",
+    "eventTypes": [
+      "Concert",
+      "Wedding",
+      "Corporate"
+    ],
+    "isFeatured": true,
+    "views": 0,
+    "createdAt": "2025-10-31T09:12:31.586Z",
+    "updatedAt": "2025-10-31T09:12:31.586Z"
+  },
+  {
+    "_id": "69047d79f236d7cddf4a1c4a",
+    "name": "Akhil Sachdeva",
+    "slug": "akhil-sachdeva",
+    "category": "Singers",
+    "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800",
+    "bio": "Akhil Sachdeva is an Indian singer, songwriter, and music composer born on February 19, 1985, in Kanpur. He rose to fame with Humsafar from Badrinath Ki Dulhania (2017) and achieved massive success with Tera Ban Jaunga from Kabir Singh (2019), which became one of the most-streamed Bollywood tracks. He was the lead vocalist of Delhi-based band Nasha.",
+    "achievements": [
+      "Filmfare Award for Best Male Playback Singer",
+      "IIFA Award for Best Male Playback Singer",
+      "Tera Ban Jaunga - Massive hit",
+      "1.2M+ Shazam counts",
+      "Multiple Zee Cine Awards"
+    ],
+    "socialLinks": [
+      "https://www.instagram.com/akhilsachdeva"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/mBLP0PL7A1o",
+    "gender": "Male",
+    "language": [
+      "Hindi",
+      "Punjabi"
+    ],
+    "location": "Mumbai, Maharashtra",
+    "priceRange": "Mid-Range",
+    "eventTypes": [
+      "Wedding",
+      "Concert",
+      "Private Party"
+    ],
+    "isFeatured": false,
+    "views": 0,
+    "createdAt": "2025-10-31T09:12:25.138Z",
+    "updatedAt": "2025-10-31T09:12:25.138Z"
+  },
+  {
+    "_id": "69047d72f236d7cddf4a1c47",
+    "name": "Adnan Sami",
+    "slug": "adnan-sami",
+    "category": "Singers",
+    "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800",
+    "bio": "Adnan Sami Khan is an Indian singer, musician, composer, and pianist known as the fastest keyboard player in the world. Born on August 15, 1971, in London, he is proficient in 35+ instruments. His albums Kabhi To Nazar Milao and Tera Chehra were massive hits. He became an Indian citizen in 2016 and was awarded the Padma Shri in 2020.",
+    "achievements": [
+      "Padma Shri (2020)",
+      "National Film Award for Refugee",
+      "Sold 100 million albums worldwide",
+      "Fastest keyboard player in the world",
+      "First Asian to sell out Wembley Stadium for 2 nights"
+    ],
+    "socialLinks": [
+      "https://www.instagram.com/adnansami",
+      "https://twitter.com/AdnanSamiLive",
+      "https://www.facebook.com/AdnanSamiLive"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/vdXqH2RyHWI",
+    "gender": "Male",
+    "language": [
+      "Hindi",
+      "Urdu",
+      "English",
+      "Telugu",
+      "Tamil"
+    ],
+    "location": "Mumbai, Maharashtra",
+    "priceRange": "Premium",
+    "eventTypes": [
+      "Concert",
+      "Wedding",
+      "Corporate"
+    ],
+    "isFeatured": true,
+    "views": 0,
+    "createdAt": "2025-10-31T09:12:18.850Z",
+    "updatedAt": "2025-10-31T09:12:18.850Z"
+  },
+  {
+    "_id": "69047d64f236d7cddf4a1c44",
+    "name": "Aditi Singh Sharma",
+    "slug": "aditi-singh-sharma",
+    "category": "Singers",
+    "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800",
+    "bio": "Aditi Singh Sharma is an Indian playback singer born on June 2, 1986, in New Delhi. She made her Bollywood debut with Yahi Meri Zindagi from Dev.D (2009). Known for her powerful vocals and versatile style, she has delivered hits like Sooraj Dooba Hain, High Heels Te Nachche, and worked with top composers including A.R. Rahman, Pritam, and Amit Trivedi.",
+    "achievements": [
+      "Bollywood debut with Dev.D (2009)",
+      "Performed at IIFA 2013",
+      "MTV Coke Studio artist",
+      "320,000+ Instagram followers",
+      "Works in Hindi, Telugu, and Bengali"
+    ],
+    "socialLinks": [
+      "https://www.instagram.com/adtsinghsharma"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/y_TRdFSKGFQ",
+    "gender": "Female",
+    "language": [
+      "Hindi",
+      "Telugu",
+      "Bengali",
+      "English"
+    ],
+    "location": "Mumbai, Maharashtra",
+    "priceRange": "Mid-Range",
+    "eventTypes": [
+      "Concert",
+      "Wedding",
+      "Corporate"
+    ],
+    "isFeatured": false,
+    "views": 0,
+    "createdAt": "2025-10-31T09:12:04.521Z",
+    "updatedAt": "2025-10-31T09:12:04.521Z"
+  },
+  {
+    "_id": "69047d5df236d7cddf4a1c41",
+    "name": "Abhijeet Bhattacharya",
+    "slug": "abhijeet-bhattacharya",
+    "category": "Singers",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800",
+    "bio": "Abhijeet Bhattacharya is one of Bollywood's most prolific playback singers with over 6,050 songs across 1,000+ films. Born on October 30, 1958, in Kanpur, he was the voice of Shah Rukh Khan in the 1990s-2000s. His romantic chartbusters like Ole Ole, Chunari Chunari, and Main Koi Aisa Geet Gaaon defined an era in Bollywood music.",
+    "achievements": [
+      "Filmfare Award for Best Male Playback Singer",
+      "6,050+ songs in 1,000+ films",
+      "Voice of Shah Rukh Khan",
+      "Yash Bharati Samman (2013)",
+      "40+ years career span"
+    ],
+    "socialLinks": [
+      "https://www.instagram.com/abhijeetbhattacharya",
+      "http://singerabhijeet.com"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/lJqbaGRCqTs",
+    "gender": "Male",
+    "language": [
+      "Hindi",
+      "Bengali",
+      "Tamil",
+      "Marathi",
+      "Punjabi"
+    ],
+    "location": "Mumbai, Maharashtra",
+    "priceRange": "Premium",
+    "eventTypes": [
+      "Concert",
+      "Wedding",
+      "Corporate"
+    ],
+    "isFeatured": false,
+    "views": 0,
+    "createdAt": "2025-10-31T09:11:57.598Z",
+    "updatedAt": "2025-10-31T09:11:57.598Z"
+  },
+  {
+    "_id": "69047d56f236d7cddf4a1c3e",
+    "name": "Aastha Gill",
+    "slug": "aastha-gill",
+    "category": "Singers",
+    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800",
+    "bio": "Aastha Gill is an Indian playback singer and songwriter known for her energetic party anthems and pop music. Born on June 24, 1991, in Delhi, she is the daughter of music director Jaspal Singh. She rose to fame with DJ Waley Babu (2015) featuring Badshah, which became a massive hit. Her collaboration with Badshah continues to produce chart-topping hits.",
+    "achievements": [
+      "DJ Waley Babu - Breakthrough hit",
+      "2 Mirchi Music Awards nominations",
+      "5.6M monthly listeners on Spotify",
+      "Multiple chart-topping hits with Badshah",
+      "Judge on reality shows"
+    ],
+    "socialLinks": [
+      "https://www.instagram.com/aasthagill",
+      "https://www.facebook.com/aasthagillofficial"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/8pm_KoguqPM",
+    "gender": "Female",
+    "language": [
+      "Hindi",
+      "Punjabi",
+      "English"
+    ],
+    "location": "Mumbai, Maharashtra",
+    "priceRange": "Mid-Range",
+    "eventTypes": [
+      "Wedding",
+      "Concert",
+      "Private Party",
+      "Corporate"
+    ],
+    "isFeatured": false,
+    "views": 0,
+    "createdAt": "2025-10-31T09:11:50.400Z",
+    "updatedAt": "2025-10-31T09:11:50.400Z"
+  },
+  {
+    "_id": "69047d4ff236d7cddf4a1c3b",
+    "name": "A. R. Rahman",
+    "slug": "a-r-rahman",
+    "category": "Singers",
+    "image": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800",
+    "bio": "Allah Rakha Rahman, known as the Mozart of Madras, is an Oscar-winning composer, singer, and music producer. Born in Chennai on January 6, 1967, he has revolutionized Indian film music by blending classical, electronic, and world music. His career breakthrough came with Roja (1992), and he achieved global recognition with Slumdog Millionaire, winning 2 Academy Awards, 2 Grammys, a BAFTA, and a Golden Globe.",
+    "achievements": [
+      "2 Academy Awards (Oscars)",
+      "2 Grammy Awards",
+      "1 BAFTA Award",
+      "1 Golden Globe",
+      "6 National Film Awards",
+      "15 Filmfare Awards",
+      "Padma Bhushan (2010)",
+      "Sold over 150 million albums worldwide"
+    ],
+    "socialLinks": [
+      "https://www.instagram.com/arrahman",
+      "https://twitter.com/arrahman",
+      "https://www.facebook.com/arrahman"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/uD8YhABD9yk",
+    "gender": "Male",
+    "language": [
+      "Hindi",
+      "Tamil",
+      "Telugu",
+      "Malayalam",
+      "English"
+    ],
+    "location": "Chennai, Tamil Nadu",
+    "priceRange": "Premium",
+    "eventTypes": [
+      "Concert",
+      "Corporate",
+      "Wedding"
+    ],
+    "isFeatured": true,
+    "views": 5,
+    "createdAt": "2025-10-31T09:11:43.061Z",
+    "updatedAt": "2025-10-31T09:11:43.061Z"
+  }
+]
