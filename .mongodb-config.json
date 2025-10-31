@@ -1,3 +1,3 @@
 {
-  "mongoUri": "mongodb+srv://abhijeet18012001_db_user:EyCMp77TMRm5eaCk@celebcatalogue.nc82qd4.mongodb.net/?appName=celebcatalogue"
+  "celebrityMongoUri": "mongodb+srv://abhijeet18012001_db_user:EyCMp77TMRm5eaCk@celebcatalogue.nc82qd4.mongodb.net/?appName=celebcatalogue"
 }
