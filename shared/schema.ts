@@ -109,3 +109,25 @@ export type Celebrity = {
 };
 
 export type InsertCelebrity = z.infer<typeof insertCelebritySchema>;
+
+export const adminSignupSchema = z.object({
+  email: z.string().email("Invalid email address"),
+  password: z.string().min(6, "Password must be at least 6 characters"),
+  name: z.string().min(2, "Name must be at least 2 characters"),
+});
+
+export const adminLoginSchema = z.object({
+  email: z.string().email("Invalid email address"),
+  password: z.string().min(1, "Password is required"),
+});
+
+export type AdminSignup = z.infer<typeof adminSignupSchema>;
+export type AdminLogin = z.infer<typeof adminLoginSchema>;
+
+export type Admin = {
+  _id: string;
+  email: string;
+  name: string;
+  createdAt: Date;
+  updatedAt: Date;
+};

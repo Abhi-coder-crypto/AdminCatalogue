@@ -1,12 +1,15 @@
-import type { Express, Request, Response } from "express";
+import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import { z } from "zod";
 import { fromError } from "zod-validation-error";
 import {
   mongoConfigSchema,
   insertCelebritySchema,
+  adminSignupSchema,
+  adminLoginSchema,
   type Celebrity,
   type InsertCelebrity,
+  type Admin,
 } from "@shared/schema";
 import {
   connectToMongoDB,
@@ -15,42 +18,149 @@ import {
   initializeMongoDB,
 } from "./mongodb";
 import { CelebrityModel } from "./models/celebrity";
+import { AdminModel } from "./models/admin";
+
+function requireAuth(req: Request, res: Response, next: NextFunction) {
+  if (!req.session.adminId) {
+    return res.status(401).json({ message: "Authentication required" });
+  }
+  next();
+}
 
 export async function registerRoutes(app: Express): Promise<Server> {
   await initializeMongoDB();
 
-  app.post("/api/config/mongodb", async (req: Request, res: Response) => {
+  app.post("/api/auth/signup", async (req: Request, res: Response) => {
     try {
-      const validation = mongoConfigSchema.safeParse(req.body);
+      const adminCount = await AdminModel.countDocuments();
+      if (adminCount > 0) {
+        return res.status(403).json({
+          message: "Admin account already exists. Please contact the system administrator.",
+        });
+      }
+
+      const validation = adminSignupSchema.safeParse(req.body);
       if (!validation.success) {
         return res.status(400).json({
           message: fromError(validation.error).toString(),
         });
       }
 
-      const { mongoUri } = validation.data;
+      const { email, password, name } = validation.data;
 
-      await connectToMongoDB(mongoUri);
-      saveMongoConfig(mongoUri);
+      const admin = new AdminModel({ email, password, name });
+      await admin.save();
 
-      res.json({
-        message: "MongoDB connection configured successfully",
-        connected: true,
-      });
+      req.session.adminId = (admin._id as any).toString();
+
+      const adminResponse: Admin = {
+        _id: (admin._id as any).toString(),
+        email: admin.email,
+        name: admin.name,
+        createdAt: admin.createdAt,
+        updatedAt: admin.updatedAt,
+      };
+
+      res.status(201).json({ admin: adminResponse });
     } catch (error) {
-      console.error("MongoDB connection error:", error);
+      console.error("Signup error:", error);
       res.status(500).json({
-        message: error instanceof Error ? error.message : "Failed to connect to MongoDB",
+        message: error instanceof Error ? error.message : "Failed to create admin account",
       });
     }
   });
 
-  app.get("/api/config/mongodb/status", (_req: Request, res: Response) => {
+  app.post("/api/auth/login", async (req: Request, res: Response) => {
+    try {
+      const validation = adminLoginSchema.safeParse(req.body);
+      if (!validation.success) {
+        return res.status(400).json({
+          message: fromError(validation.error).toString(),
+        });
+      }
+
+      const { email, password } = validation.data;
+
+      const admin = await AdminModel.findOne({ email });
+      if (!admin) {
+        return res.status(401).json({ message: "Invalid email or password" });
+      }
+
+      const isPasswordValid = await admin.comparePassword(password);
+      if (!isPasswordValid) {
+        return res.status(401).json({ message: "Invalid email or password" });
+      }
+
+      req.session.regenerate((err) => {
+        if (err) {
+          console.error("Session regeneration error:", err);
+        }
+      });
+
+      req.session.adminId = (admin._id as any).toString();
+
+      const adminResponse: Admin = {
+        _id: (admin._id as any).toString(),
+        email: admin.email,
+        name: admin.name,
+        createdAt: admin.createdAt,
+        updatedAt: admin.updatedAt,
+      };
+
+      res.json({ admin: adminResponse });
+    } catch (error) {
+      console.error("Login error:", error);
+      res.status(500).json({
+        message: error instanceof Error ? error.message : "Login failed",
+      });
+    }
+  });
+
+  app.post("/api/auth/logout", (req: Request, res: Response) => {
+    req.session.destroy((err) => {
+      if (err) {
+        console.error("Logout error:", err);
+        return res.status(500).json({ message: "Failed to logout" });
+      }
+      res.json({ message: "Logged out successfully" });
+    });
+  });
+
+  app.get("/api/auth/me", async (req: Request, res: Response) => {
+    try {
+      if (!req.session.adminId) {
+        return res.status(401).json({ message: "Not authenticated" });
+      }
+
+      const admin = await AdminModel.findById(req.session.adminId);
+      if (!admin) {
+        req.session.destroy(() => {});
+        return res.status(401).json({ message: "Admin not found" });
+      }
+
+      const adminResponse: Admin = {
+        _id: (admin._id as any).toString(),
+        email: admin.email,
+        name: admin.name,
+        createdAt: admin.createdAt,
+        updatedAt: admin.updatedAt,
+      };
+
+      res.json({ admin: adminResponse });
+    } catch (error) {
+      console.error("Auth check error:", error);
+      res.status(500).json({
+        message: error instanceof Error ? error.message : "Failed to check authentication",
+      });
+    }
+  });
+
+  app.get("/api/config/mongodb/status", requireAuth, (_req: Request, res: Response) => {
     const status = getConnectionStatus();
     res.json(status);
   });
 
-  app.get("/api/celebrities", async (_req: Request, res: Response) => {
+  app.get("/api/celebrities", requireAuth, async (_req: Request, res: Response) => {
     try {
       const celebrities = await CelebrityModel.find().sort({ createdAt: -1 });
       const formattedCelebrities: Celebrity[] = celebrities.map((doc) => ({
@@ -81,7 +191,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.get("/api/celebrities/:id", async (req: Request, res: Response) => {
+  app.get("/api/celebrities/:id", requireAuth, async (req: Request, res: Response) => {
     try {
       const { id } = req.params;
       const celebrity = await CelebrityModel.findById(id);
@@ -119,7 +229,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.post("/api/celebrities", async (req: Request, res: Response) => {
+  app.post("/api/celebrities", requireAuth, async (req: Request, res: Response) => {
     try {
       const validation = insertCelebritySchema.safeParse(req.body);
       if (!validation.success) {
@@ -169,7 +279,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.put("/api/celebrities/:id", async (req: Request, res: Response) => {
+  app.put("/api/celebrities/:id", requireAuth, async (req: Request, res: Response) => {
     try {
       const { id } = req.params;
 
@@ -231,7 +341,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.delete("/api/celebrities/:id", async (req: Request, res: Response) => {
+  app.delete("/api/celebrities/:id", requireAuth, async (req: Request, res: Response) => {
     try {
       const { id } = req.params;
 
