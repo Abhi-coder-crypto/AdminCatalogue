@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { Switch, Route } from "wouter";
+import { Switch, Route, useLocation, Redirect } from "wouter";
 import { queryClient } from "./lib/queryClient";
-import { QueryClientProvider } from "@tanstack/react-query";
+import { QueryClientProvider, useQuery } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
@@ -15,14 +15,63 @@ import EditCelebrity from "@/pages/edit-celebrity";
 import LoginPage from "@/pages/login";
 import type { Admin } from "@shared/schema";
 
+function ProtectedRoute({ component: Component, dbRequired = true }: { component: React.ComponentType; dbRequired?: boolean }) {
+  const [location] = useLocation();
+  const { data: dbStatus, isLoading, isError, isFetching } = useQuery<{ connected: boolean; message: string }>({
+    queryKey: ["/api/config/mongodb/status"],
+    enabled: dbRequired,
+    staleTime: 30000,
+    retry: 2,
+  });
+
+  if (!dbRequired) {
+    return <Component />;
+  }
+
+  if (isLoading || isFetching) {
+    return (
+      <div className="flex items-center justify-center h-full">
+        <div className="text-lg">Checking database connection...</div>
+      </div>
+    );
+  }
+
+  if (isError) {
+    return (
+      <div className="flex flex-col items-center justify-center h-full gap-4">
+        <div className="text-lg text-destructive">Failed to check database connection</div>
+        <Button onClick={() => queryClient.invalidateQueries({ queryKey: ["/api/config/mongodb/status"] })}>
+          Retry
+        </Button>
+      </div>
+    );
+  }
+
+  if (!dbStatus?.connected && location !== "/setup") {
+    return <Redirect to="/setup" />;
+  }
+
+  return <Component />;
+}
+
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={Dashboard} />
-      <Route path="/setup" component={Setup} />
-      <Route path="/dashboard" component={Dashboard} />
-      <Route path="/add" component={AddCelebrity} />
-      <Route path="/edit/:id" component={EditCelebrity} />
+      <Route path="/setup">
+        <ProtectedRoute component={Setup} dbRequired={false} />
+      </Route>
+      <Route path="/">
+        <ProtectedRoute component={Dashboard} />
+      </Route>
+      <Route path="/dashboard">
+        <ProtectedRoute component={Dashboard} />
+      </Route>
+      <Route path="/add">
+        <ProtectedRoute component={AddCelebrity} />
+      </Route>
+      <Route path="/edit/:id">
+        <ProtectedRoute component={EditCelebrity} />
+      </Route>
       <Route component={NotFound} />
     </Switch>
   );

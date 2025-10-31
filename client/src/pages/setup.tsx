@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQuery } from "@tanstack/react-query";
+import { useLocation } from "wouter";
 import { Database, CheckCircle2, XCircle, Loader2 } from "lucide-react";
 import { mongoConfigSchema, type MongoConfig } from "@shared/schema";
 import { Button } from "@/components/ui/button";
@@ -13,6 +14,7 @@ import { apiRequest, queryClient } from "@/lib/queryClient";
 
 export default function Setup() {
   const { toast } = useToast();
+  const [, setLocation] = useLocation();
   const [testingConnection, setTestingConnection] = useState(false);
 
   const form = useForm<MongoConfig>({
@@ -36,9 +38,12 @@ export default function Setup() {
     onSuccess: () => {
       toast({
         title: "Success",
-        description: "MongoDB connection configured successfully",
+        description: "Celebrity database connected successfully! Redirecting to dashboard...",
       });
       queryClient.invalidateQueries({ queryKey: ["/api/config/mongodb/status"] });
+      setTimeout(() => {
+        setLocation("/dashboard");
+      }, 1500);
     },
     onError: (error: Error) => {
       toast({
