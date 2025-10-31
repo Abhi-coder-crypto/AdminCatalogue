@@ -54,7 +54,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const celebrities = await CelebrityModel.find().sort({ createdAt: -1 });
       const formattedCelebrities: Celebrity[] = celebrities.map((doc) => ({
-        _id: doc._id.toString(),
+        _id: (doc._id as any).toString(),
         name: doc.name,
         slug: doc.slug,
         category: doc.category,
@@ -91,7 +91,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
 
       const formattedCelebrity: Celebrity = {
-        _id: celebrity._id.toString(),
+        _id: (celebrity._id as any).toString(),
         name: celebrity.name,
         slug: celebrity.slug,
         category: celebrity.category,
@@ -141,7 +141,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       await celebrity.save();
 
       const formattedCelebrity: Celebrity = {
-        _id: celebrity._id.toString(),
+        _id: (celebrity._id as any).toString(),
         name: celebrity.name,
         slug: celebrity.slug,
         category: celebrity.category,
@@ -203,7 +203,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
 
       const formattedCelebrity: Celebrity = {
-        _id: celebrity._id.toString(),
+        _id: (celebrity._id as any).toString(),
         name: celebrity.name,
         slug: celebrity.slug,
         category: celebrity.category,
