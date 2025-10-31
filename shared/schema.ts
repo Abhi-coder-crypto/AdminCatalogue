@@ -11,6 +11,7 @@ export type MongoConfig = z.infer<typeof mongoConfigSchema>;
 export const categoryOptions = [
   "Singers",
   "Actors",
+  "Actresses",
   "Comedians",
   "Influencers",
   "Choreographers",
